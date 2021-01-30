@@ -1,4 +1,4 @@
-export function title(block) {
+function title(block) {
   return `
       <div class="row">
           <div class="col-sm">
@@ -8,7 +8,7 @@ export function title(block) {
       `;
 }
 
-export function text(block) {
+function text(block) {
   return `
       <div class="row">
           <div class="col-sm">
@@ -20,7 +20,7 @@ export function text(block) {
     `;
 }
 
-export function columns(block) {
+function columns(block) {
   // let html = '';
 
   // block.value.forEach((item) => {
@@ -40,10 +40,23 @@ export function columns(block) {
     `;
 }
 
-export function image(block) {
+function image(block) {
   return `
       <div class="row">
         <img src="${block.value}">
       </div>
     `;
 }
+
+export const templates = {
+  // title: title,
+  // text: text,
+  // columns: columns,
+  // image: image,
+  //т.к. в js если ключ: "и значение" совпадают ключ: ключ
+  // тогда можно просто написать только ключ
+  title,
+  text,
+  columns,
+  image,
+};
