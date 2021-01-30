@@ -11,8 +11,10 @@ import { row, col } from './utils';
 // }
 
 function title(block) {
-  const tag = block.options.tag ?? 'h1';
-  const styles = block.options.styles;
+  // оптимизация - деструктуризация :)
+  const { tag = 'h1', styles } = block.options;
+  // const tag = block.options.tag ?? 'h1';
+  // const styles = block.options.styles;
   return row(col(`<${tag}>${block.value}</${tag}>`), styles);
 }
 
