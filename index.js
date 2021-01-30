@@ -2,8 +2,10 @@ const model = [
   { type: 'title', value: 'Hello World from JS' },
   { type: 'text', value: 'here we go some text' },
   { type: 'columns', value: ['111111', '222222', '333333', '444444'] },
+  { type: 'image', value: './assets/image.png' },
 ];
 
+// получаем <div id="site"></div>
 const $site = document.querySelector('#site');
 
 model.forEach((block) => {
@@ -17,8 +19,11 @@ model.forEach((block) => {
     html = text(block);
   } else if (block.type === 'columns') {
     html = columns(block);
+  } else if (block.type === 'image') {
+    html = image(block);
   }
 
+  // выводим в <div id="site"></div> элементы нашего массива (массив данных рендерим в код html)
   $site.insertAdjacentHTML('beforeend', html);
 });
 
@@ -51,7 +56,7 @@ function columns(block) {
   //   html += `
   //     <div class="col-sm">
   //     ${item}
-  //     </div>  
+  //     </div>
   //     `;
   // });
 
@@ -62,4 +67,12 @@ function columns(block) {
         ${html.join('')}
     </div>
   `;
+}
+
+function image(block) {
+  return `
+    <div class="row">
+      <img src="${block.value}">
+    </div>
+  `
 }
