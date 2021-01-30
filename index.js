@@ -1,7 +1,7 @@
 const model = [
   { type: 'title', value: 'Hello World from JS' },
   { type: 'text', value: 'here we go some text' },
-  { type: 'columns', value: ['111111', '222222', '333333'] },
+  { type: 'columns', value: ['111111', '222222', '333333', '444444'] },
 ];
 
 const $site = document.querySelector('#site');
@@ -45,19 +45,21 @@ function text(block) {
 }
 
 function columns(block) {
-  let html = '';
+  // let html = '';
 
-  block.value.forEach((item) => {
-    html += `
-      <div class="col-sm">
-      ${item}
-      </div>  
-      `;
-  });
+  // block.value.forEach((item) => {
+  //   html += `
+  //     <div class="col-sm">
+  //     ${item}
+  //     </div>  
+  //     `;
+  // });
+
+  const html = block.value.map((item) => `<div class="col-sm">${item}</div>`);
 
   return `
     <div class="row">
-        ${html}
+        ${html.join('')}
     </div>
   `;
 }
