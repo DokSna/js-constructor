@@ -4,12 +4,12 @@ import { templates } from './templates';
 import './styles/main.css';
 
 const key = 'title';
-console.log(templates['title']);
+// console.log(templates['title']);
 // получаем <div id="site"></div>
 const $site = document.querySelector('#site');
 
 model.forEach((block) => {
-  console.log(block);
+  // console.log(block);
 
   // let html = '';
 
