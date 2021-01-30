@@ -11,7 +11,9 @@ import { row, col } from './utils';
 // }
 
 function title(block) {
-  return row(col(`<h1>${block.value}</h1>`));
+  const tag = block.options.tag ?? 'h1';
+  const styles = block.options.styles;
+  return row(col(`<${tag}>${block.value}</${tag}>`), styles);
 }
 
 // function text(block) {
@@ -53,7 +55,7 @@ function text(block) {
 function columns(block) {
   // const html = block.value.map((item) => col(item));
   // return row(html.join(''));
-  const html = block.value.map(col).join('');    //(item) => col(item) == col
+  const html = block.value.map(col).join(''); //(item) => col(item) == col
   return row(html);
 }
 
