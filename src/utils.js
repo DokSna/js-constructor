@@ -7,11 +7,16 @@ export function col(content) {
 }
 
 export function css(styles = {}) {
-  const keys = Object.keys(styles);
+  // const keys = Object.keys(styles);
 
-  const array = keys.map((key) => {
-    return `${key}:${styles[key]}`;
-  });
+  // const array = keys.map((key) => {
+  //   return `${key}:${styles[key]}`;
+  // });
 
-  return array.join(';');
+  // return array.join(';');
+
+  // вариант кода №2 - нет предела совершенству!
+  const toString = (key) => `${key}:${styles[key]}`;
+
+  return Object.keys(styles).map(toString).join(';');
 }
