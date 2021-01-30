@@ -51,8 +51,10 @@ function text(block) {
 // }
 
 function columns(block) {
-  const html = block.value.map((item) => col(item));
-  return row(html.join(''));
+  // const html = block.value.map((item) => col(item));
+  // return row(html.join(''));
+  const html = block.value.map(col).join('');    //(item) => col(item) == col
+  return row(html);
 }
 
 // function image(block) {
