@@ -9,7 +9,7 @@ const key = 'title';
 const $site = document.querySelector('#site');
 
 model.forEach((block) => {
-  // console.log(block);
+  console.log(block);
 
   // let html = '';
 

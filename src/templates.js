@@ -70,9 +70,9 @@ function columns(block) {
 // }
 
 function image(block) {
-  const { imageStyles, alt = '', styles } = block.options;
+  const { imageStyles: iS, alt = '', styles } = block.options;
   return row(
-    `<img src="${block.value}" alt="${alt}" style="${css(imageStyles)}">`,
+    `<img src="${block.value}" alt="${alt}" style="${css(iS)}">`,
     css(styles)
   );
 }
