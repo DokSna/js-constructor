@@ -1,10 +1,15 @@
 import image from './assets/image.png';
-import { Block } from './classes/blocks';
+import {
+  TitleBlock,
+  ImageBlock,
+  ColumnsBlock,
+  TextBlock,
+} from './classes/blocks';
 
 const text = `Крутые видео и уроки по JavaScript.`;
 
 export const model = [
-  new Block('title', 'Конструктор сайтов на чистом JavaScript', {
+  new TitleBlock('Конструктор сайтов на чистом JavaScript', {
     tag: 'h2',
     styles: {
       background: 'linear-gradient(to right, #ff0099, #493240)',
@@ -30,7 +35,7 @@ export const model = [
   //     },
   //   },
   // },
-  new Block('image', image, {
+  new ImageBlock(image, {
     styles: {
       padding: '2rem 0',
       display: 'flex',
@@ -58,8 +63,7 @@ export const model = [
   //     alt: 'Это картинка',
   //   },
   // },
-  new Block(
-    'columns',
+  new ColumnsBlock(
     [
       'Приложение на чистом JavaScript, без использования библиотек',
       'Узнаешь как работают принципы SOLID и ООП в JavaScript за один курс',
@@ -90,7 +94,7 @@ export const model = [
   //     },
   //   },
   // },
-  new Block('text', text, {
+  new TextBlock(text, {
     styles: {
       background: 'linear-gradient(to left, #f2994a, #f2c94c)',
       padding: '1rem',

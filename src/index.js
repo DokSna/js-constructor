@@ -1,6 +1,6 @@
 import { model } from './model';
-// import { title, text, columns, image } from './templates';
-import { templates } from './templates';
+// // import { title, text, columns, image } from './templates';
+// import { templates } from './templates';
 import './styles/main.css';
 
 const key = 'title';
@@ -9,7 +9,7 @@ const key = 'title';
 const $site = document.querySelector('#site');
 
 model.forEach((block) => {
-  console.log(block);
+  // console.log(block.toHTML());
 
   // let html = '';
 
@@ -23,9 +23,10 @@ model.forEach((block) => {
   //   html = image(block);
   // }
 
-  const toHTML = templates[block.type];
-  if (toHTML) {
-    // выводим в <div id="site"></div> элементы нашего массива (массив данных рендерим в код html)
-    $site.insertAdjacentHTML('beforeend', toHTML(block));
-  }
+  // const toHTML = templates[block.type];
+    $site.insertAdjacentHTML('beforeend', block.toHTML());
+  // if (toHTML) {
+  //   // выводим в <div id="site"></div> элементы нашего массива (массив данных рендерим в код html)
+  //   $site.insertAdjacentHTML('beforeend', toHTML(block));
+  // }
 });
