@@ -36,15 +36,24 @@ export class Sidebar {
 
     // debugger;
 
+    // // создаём блок с заданными параметрами
+    // // вариант кода №1
+    // let newBlock;
+
+    // if (type === 'title') {
+    //   newBlock = new TitleBlock(value, { styles });
+    // } else {
+    //   newBlock = new TextBlock(value, { styles });
+    // }
+
     // создаём блок с заданными параметрами
+    // вариант кода №2 с помощью тернарного выражения
 
-    let newBlock;
+    const newBlock =
+      type === 'title'
+        ? new TitleBlock(value, { styles })
+        : new TextBlock(value, { styles });
 
-    if (type === 'title') {
-      newBlock = new TitleBlock(value, { styles });
-    } else {
-      newBlock = new TextBlock(value, { styles });
-    }
     console.log(newBlock);
   }
 }
