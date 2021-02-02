@@ -45,6 +45,8 @@ export class TextBlock extends Block {
     super(value, options);
   }
   toHTML() {
+    // const temp = css(this.options.styles); //смотрели в что выдаёт css(this.options.styles)
+    // console.log(temp);
     return row(col(`<p>${this.value}</p>`), css(this.options.styles));
   }
 }

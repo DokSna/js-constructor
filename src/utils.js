@@ -16,6 +16,7 @@ export function css(styles = {}) {
   // return array.join(';');
 
   // вариант кода №2 - нет предела совершенству!
+  if (typeof styles === 'string') return styles;
   const toString = (key) => `${key}:${styles[key]}`;
 
   return Object.keys(styles).map(toString).join(';');
