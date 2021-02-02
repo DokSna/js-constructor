@@ -57,5 +57,9 @@ export class Sidebar {
 
     // debugger;
     this.update(newBlock);
+
+    // после нажатия кнопки, поля в форме очистятся
+    event.target.value.value = '';
+    event.target.styles.value = '';
   }
 }
