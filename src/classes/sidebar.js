@@ -1,8 +1,9 @@
 import { block } from '../utils';
 import { TextBlock, TitleBlock } from './blocks';
 export class Sidebar {
-  constructor(selector) {
+  constructor(selector, updateCallback) {
     this.$el = document.querySelector(selector);
+    this.update = updateCallback;
 
     this.init();
   }
@@ -10,7 +11,7 @@ export class Sidebar {
   init() {
     this.$el.insertAdjacentHTML('afterbegin', this.template);
     // сразу после инициализации, когда мы собрали DOM, мы начинаем слушать событие submit
-    this.$el.addEventListener('submit', this.add);
+    this.$el.addEventListener('submit', this.add.bind(this)); //с помощью метода .bind(this) привязываем контекст, который в этом месте теряется
   }
 
   get template() {
@@ -54,6 +55,7 @@ export class Sidebar {
         ? new TitleBlock(value, { styles })
         : new TextBlock(value, { styles });
 
-    console.log(newBlock);
+    // debugger;
+    this.update(newBlock);
   }
 }
