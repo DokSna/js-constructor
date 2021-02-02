@@ -1,4 +1,5 @@
 import { block } from '../utils';
+import { TextBlock, TitleBlock } from './blocks';
 export class Sidebar {
   constructor(selector) {
     this.$el = document.querySelector(selector);
@@ -25,5 +26,25 @@ export class Sidebar {
 
   add(event) {
     event.preventDefault(); //и страница не перезагружается при нажатии кнопки
+
+    // console.log(event.target);
+
+    const type = event.target.name;
+
+    const value = event.target.value.value;
+    const styles = event.target.styles.value;
+
+    // debugger;
+
+    // создаём блок с заданными параметрами
+
+    let newBlock;
+
+    if (type === 'title') {
+      newBlock = new TitleBlock(value, { styles });
+    } else {
+      newBlock = new TextBlock(value, { styles });
+    }
+    console.log(newBlock);
   }
 }
