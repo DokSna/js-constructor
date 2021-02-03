@@ -3,3 +3,7 @@ dist/
 package-lock.json
 .cache/
 copy/
+firebase-debug.log
+firebase.json
+.firebaserc
+.firebase/

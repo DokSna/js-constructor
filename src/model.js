@@ -13,7 +13,7 @@ export const model = [
     tag: 'h2',
     styles: {
       background: 'linear-gradient(to right, #ff0099, #493240)',
-      color: 'green',
+      color: '#fff',
       padding: '1.5rem',
       'text-align': 'center',
     },
